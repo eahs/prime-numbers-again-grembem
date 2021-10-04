@@ -25,9 +25,33 @@ namespace PrimeNumbersAgain
 
         static int FindNthPrime(int n)
         {
-            return 0;
+        
+           
+                       int num = 1;
+                       int i = 0;
+                       while (i < n) 
+                       {
+                           num++;
+                           if (isPrime(num) == true)
+                           {
+                               i++;
+                           }
+                           
+                       }
+
+                       return (num);
+
+
         }
 
+        public static bool isPrime(int n)
+        {
+            for(int i = 2; i <= Math.Sqrt(n); i++)
+            {
+                if(n%i == 0) return false;
+            }
+            return true;
+        }
         static int GetNumber()
         {
             int n = 0;
